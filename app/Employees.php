@@ -14,4 +14,10 @@ class Employees extends Model
     protected $fillable = [
         'first_name','last_name', 'email', 'company_id', 'phone'
     ];
+
+    public function company()
+    {
+        return $this->hasOne('App\Companies','id','company_id');
+    }
+
 }
